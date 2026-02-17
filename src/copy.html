@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAEWON Birthday EVENT</title>
+    <style>
+        /* 背景與基礎設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #7b869a; /* 圖片中的灰藍色 */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 標題區域 */
+        header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* 卡片容器 */
+        .card {
+            background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+            border-radius: 20px;
+            padding: 30px;
+            width: 85%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Hashtag 複製區域 */
+        .hashtag-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+        }
+
+        .hashtag-box:active {
+            transform: scale(0.98);
+        }
+
+        .hashtag-box p {
+            margin: 0;
+            word-break: break-all;
+        }
+
+        /* 提示小氣泡
+        .copy-hint {
+            color: #eee;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+        } */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SNS EVENT</h1>
+        <div class="divider"></div>
+        <div class="sub-title">
+            EPISODE WON: O'Haeven<br>
+            &lt;HAEWON's Birthday EVENT&gt;
+        </div>
+    </header>
+
+    <div class="card">
+        <div class="card-label">
+            Copy Hashtag 💫
+        </div>
+        <div class="hashtag-box" id="hashtagBox" onclick="copyText()">
+            <p>#Happy_Haewon_Day</p>
+            <p>#EPISODE_WON</p>
+            <p>#O'Haeven</p>
+        </div>
+        <div class="copy-hint">點擊上方白色區塊即可複製</div>
+    </div>
+
+    <script>
+        function copyText() {
+            const text = "#Happy_Haewon_Day\n#EPISODE_WON #O'Haeven";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Hashtag 已複製到剪貼簿！");
+            }).catch(err => {
+                console.error('無法複製文字: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
